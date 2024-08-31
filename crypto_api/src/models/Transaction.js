@@ -1,15 +1,22 @@
+// models/Transaction.js
 const mongoose = require("mongoose");
 
 const TransactionSchema = new mongoose.Schema({
   address: {
     type: String,
     required: true,
-    index: true,
+  },
+  blockNumber: {
+    type: String,
+    required: true,
+  },
+  timeStamp: {
+    type: String,
+    required: true,
   },
   hash: {
     type: String,
     required: true,
-    unique: true,
   },
   from: {
     type: String,
@@ -23,16 +30,12 @@ const TransactionSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  gasUsed: {
-    type: Number,
+  gas: {
+    type: String,
     required: true,
   },
   gasPrice: {
     type: String,
-    required: true,
-  },
-  timestamp: {
-    type: Date,
     required: true,
   },
 });
